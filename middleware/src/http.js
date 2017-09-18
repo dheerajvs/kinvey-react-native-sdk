@@ -7,7 +7,7 @@ import {
 import { Platform } from 'react-native';
 import xhr from 'xhr'; // TODO: Replace with axios
 import Promise from 'es6-promise';
-import pkg from '../../../../../package.json';
+import pkg from '../../../package.json';
 
 function deviceInformation() {
   const parts = [`js-${pkg.name}/${pkg.version}`];
