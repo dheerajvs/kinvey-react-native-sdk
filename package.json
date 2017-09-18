@@ -1,0 +1,17 @@
+{
+  "name": "kinvey-react-native-sdk",
+  "version": "1.0.0",
+  "description": "React-native SDK for Kinvey",
+  "main": "index.js",
+  "author": "Chris Miller",
+  "license": "MIT",
+  "dependencies": {
+    "es6-promise": "^4.1.1",
+    "kinvey-js-sdk": "^3.8.1",
+    "lodash": "^4.17.4",
+    "xhr": "^2.4.0"
+  },
+  "peerDependencies": {
+    "react-native": "*"
+  }
+}
