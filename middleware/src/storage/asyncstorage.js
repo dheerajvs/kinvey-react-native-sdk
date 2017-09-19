@@ -15,11 +15,15 @@ export class AsyncStorageAdapter {
   constructor(name = 'kinvey') {
     this.name = name;
 
-    // TODO: The following code requires the constructor to be async. Is that possible?
-    // const masterCollection = await AsyncStorage.getItem(this.masterCollectionName);
-    // if (isDefined(masterCollection) === false) {
-    //   await AsyncStorage.setItem(this.masterCollectionName, JSON.stringify([]));
-    // }
+    this.populateMasterCollection();
+  }
+
+  async populateMasterCollection() {
+    const masterCollection = await AsyncStorage.getItem(this.masterCollectionName);
+
+    if (isDefined(masterCollection) === false) {
+      await AsyncStorage.setItem(this.masterCollectionName, JSON.stringify([]));
+    }
   }
 
   get masterCollectionName() {
