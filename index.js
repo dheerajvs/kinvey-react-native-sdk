@@ -1,15 +1,6 @@
-import { CacheRack, NetworkRack } from 'kinvey-js-sdk/dist/export';
-import { MobileIdentityConnect } from 'kinvey-js-sdk/dist/identity';
-import Kinvey from 'kinvey-js-sdk';
-import { CacheMiddleware, HttpMiddleware } from './middleware';
-import Popup from './popup';
 
-// Setup racks
-CacheRack.useCacheMiddleware(new CacheMiddleware());
-NetworkRack.useHttpMiddleware(new HttpMiddleware());
+import { NativeModules } from 'react-native';
 
-// Setup popup
-MobileIdentityConnect.usePopupClass(Popup);
+const { RNKinveyReactNativeSdk } = NativeModules;
 
-// Export
-module.exports = Kinvey;
+export default RNKinveyReactNativeSdk;

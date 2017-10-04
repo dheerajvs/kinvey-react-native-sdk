@@ -3,15 +3,22 @@
   "version": "1.0.0",
   "description": "React-native SDK for Kinvey",
   "main": "index.js",
-  "author": "Chris Miller",
+  "author": "Chris Miller <chris@dialexa.com>",
   "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["react-native", "kinvey"],
   "dependencies": {
     "es6-promise": "^4.1.1",
     "kinvey-js-sdk": "^3.8.1",
     "lodash": "^4.17.4",
     "xhr": "^2.4.0"
   },
+  "devDependencies": {
+    "react-native": "0.47.2"
+  },
   "peerDependencies": {
-    "react-native": "*"
+    "react-native": "0.47.2"
   }
 }
