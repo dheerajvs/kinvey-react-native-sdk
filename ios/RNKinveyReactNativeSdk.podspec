@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
 
 
   s.dependency "React"
-  s.dependency "Realm"
+  s.dependency "RealmReact"
   #s.dependency "others"
 
 end
