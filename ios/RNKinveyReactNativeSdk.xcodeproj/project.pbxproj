@@ -5,12 +5,23 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
-		B3E7B58A1CC2AC0600A0062D /* RNKinveyReactNativeSdk.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* RNKinveyReactNativeSdk.m */; };
-		BE0EB8F3054C487EA7376C0D /* libRealmReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D88173D0EEA54F3280794B33 /* libRealmReact.a */; };
 		20742AACE0224702BE783D92 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 750E908CA31E435F89BE34ED /* libc++.tbd */; };
 		302920B24ABF474885298887 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F6A85A902AF480C85373A8E /* libz.tbd */; };
+		B3E7B58A1CC2AC0600A0062D /* RNKinveyReactNativeSdk.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* RNKinveyReactNativeSdk.m */; };
+		BE0EB8F3054C487EA7376C0D /* libRealmReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D88173D0EEA54F3280794B33 /* libRealmReact.a */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0E52FF981F857C4D0060513D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D349B30E17A7437FA0975C98 /* RealmReact.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F60690131CA2766F0003FB26;
+			remoteInfo = RealmReact;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		58B511D91A9E6C8500147676 /* CopyFiles */ = {
@@ -26,12 +37,12 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libRNKinveyReactNativeSdk.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNKinveyReactNativeSdk.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		750E908CA31E435F89BE34ED /* libc++.tbd */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		8F6A85A902AF480C85373A8E /* libz.tbd */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		B3E7B5881CC2AC0600A0062D /* RNKinveyReactNativeSdk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNKinveyReactNativeSdk.h; sourceTree = "<group>"; };
 		B3E7B5891CC2AC0600A0062D /* RNKinveyReactNativeSdk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNKinveyReactNativeSdk.m; sourceTree = "<group>"; };
-		D349B30E17A7437FA0975C98 /* RealmReact.xcodeproj */ = {isa = PBXFileReference; name = "RealmReact.xcodeproj"; path = "../node_modules/realm/react-native/ios/RealmReact.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
-		D88173D0EEA54F3280794B33 /* libRealmReact.a */ = {isa = PBXFileReference; name = "libRealmReact.a"; path = "libRealmReact.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
-		750E908CA31E435F89BE34ED /* libc++.tbd */ = {isa = PBXFileReference; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = sourcecode.text-based-dylib-definition; explicitFileType = undefined; includeInIndex = 0; };
-		8F6A85A902AF480C85373A8E /* libz.tbd */ = {isa = PBXFileReference; name = "libz.tbd"; path = "usr/lib/libz.tbd"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = sourcecode.text-based-dylib-definition; explicitFileType = undefined; includeInIndex = 0; };
+		D349B30E17A7437FA0975C98 /* RealmReact.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RealmReact.xcodeproj; path = "../node_modules/realm/react-native/ios/RealmReact.xcodeproj"; sourceTree = "<group>"; };
+		D88173D0EEA54F3280794B33 /* libRealmReact.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRealmReact.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,12 +59,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E52FF931F857C4C0060513D /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				D88173D0EEA54F3280794B33 /* libRealmReact.a */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		0E52FF951F857C4C0060513D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0E52FF991F857C4D0060513D /* libRealmReact.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		134814211AA4EA7D00B7C361 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				134814201AA4EA6300B7C361 /* libRNKinveyReactNativeSdk.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		28604DDBFC754D5BBE8F02A4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				750E908CA31E435F89BE34ED /* libc++.tbd */,
+				8F6A85A902AF480C85373A8E /* libz.tbd */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		58B511D21A9E6C8500147676 = {
@@ -64,27 +100,17 @@
 				134814211AA4EA7D00B7C361 /* Products */,
 				69145FA1920D4DDB9BE27F19 /* Libraries */,
 				28604DDBFC754D5BBE8F02A4 /* Frameworks */,
+				0E52FF931F857C4C0060513D /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
 		69145FA1920D4DDB9BE27F19 /* Libraries */ = {
-			isa = "PBXGroup";
+			isa = PBXGroup;
 			children = (
 				D349B30E17A7437FA0975C98 /* RealmReact.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
-			path = "";
-		};
-		28604DDBFC754D5BBE8F02A4 /* Frameworks */ = {
-			isa = "PBXGroup";
-			children = (
-				750E908CA31E435F89BE34ED /* libc++.tbd */,
-				8F6A85A902AF480C85373A8E /* libz.tbd */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-			path = "";
 		};
 /* End PBXGroup section */
 
@@ -130,12 +156,28 @@
 			mainGroup = 58B511D21A9E6C8500147676;
 			productRefGroup = 58B511D21A9E6C8500147676;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 0E52FF951F857C4C0060513D /* Products */;
+					ProjectRef = D349B30E17A7437FA0975C98 /* RealmReact.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				58B511DA1A9E6C8500147676 /* RNKinveyReactNativeSdk */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		0E52FF991F857C4D0060513D /* libRealmReact.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRealmReact.a;
+			remoteRef = 0E52FF981F857C4D0060513D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXSourcesBuildPhase section */
 		58B511D71A9E6C8500147676 /* Sources */ = {

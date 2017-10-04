@@ -20,8 +20,8 @@ Refer to the [`kinvey-html5-sdk` Guides](https://devcenter.kinvey.com/html5/guid
 4. Run your project (`Cmd+R`)<
 
 #### Android
-1. Open up `android/app/src/main/java/[...]/MainActivity.java`
-  - Add `import com.reactlibrary.RNKinveyReactNativeSdkPackage;` to the imports at the top of the file
+1. Open up `android/app/src/main/java/[...]/MainApplication.java`
+  - Add `import com.kinveyreactnativesdk.RNKinveyReactNativeSdkPackage;` to the imports at the top of the file
   - Add `new RNKinveyReactNativeSdkPackage()` to the list returned by the `getPackages()` method
 2. Append the following lines to `android/settings.gradle`:
   	```

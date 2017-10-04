@@ -1,4 +1,6 @@
-import { AsyncStorage } from "react-native";
+// import { AsyncStorage } from "react-native";
+import Realm from 'realm';
+
 import { NotFoundError, isDefined } from "kinvey-js-sdk/dist/export";
 import Promise from "es6-promise";
 import keyBy from "lodash/keyBy";
@@ -11,21 +13,20 @@ import find from "lodash/find";
 const idAttribute = process.env.KINVEY_ID_ATTRIBUTE || "_id";
 const masterCollectionName = "master";
 
-export class AsyncStorageAdapter {
+export class RealmStorageAdapter {
   constructor(name = "kinvey") {
     this.name = name;
 
-    this.populateMasterCollection();
+    this.initializeMasterSchema();
   }
 
-  async populateMasterCollection() {
-    const masterCollection = await AsyncStorage.getItem(
-      this.masterCollectionName
-    );
+  async initializeMasterSchema() {
+    const MasterSchema = {
+      name: this.masterCollectionName,
+      properties: {}
+    };
 
-    if (isDefined(masterCollection) === false) {
-      await AsyncStorage.setItem(this.masterCollectionName, JSON.stringify([]));
-    }
+    this.realmInstance = await Realm.open({ schema: [MasterSchema] });
   }
 
   get masterCollectionName() {
@@ -34,7 +35,7 @@ export class AsyncStorageAdapter {
 
   static async _find(collection) {
     try {
-      const entities = await AsyncStorage.getItem(collection);
+      const entities = await this.realmInstance.objects(collection);
 
       if (isDefined(entities)) {
         return Promise.resolve(JSON.parse(entities));
@@ -47,7 +48,7 @@ export class AsyncStorageAdapter {
   }
 
   find(collection) {
-    return AsyncStorageAdapter._find(`${this.name}${collection}`);
+    return RealmStorageAdapter._find(`${this.name}${collection}`);
   }
 
   findById(collection, id) {
@@ -66,7 +67,7 @@ export class AsyncStorageAdapter {
   }
 
   save(collection, entities) {
-    return AsyncStorageAdapter._find(this.masterCollectionName)
+    return RealmStorageAdapter._find(this.masterCollectionName)
       .then(async collections => {
         if (findIndex(collections, collection) === -1) {
           collections.push(collection);
@@ -120,7 +121,7 @@ export class AsyncStorageAdapter {
   }
 
   clear() {
-    return AsyncStorageAdapter._find(
+    return RealmStorageAdapter._find(
       this.masterCollectionName
     ).then(async collections => {
       forEach(collections, async collection => {
@@ -133,6 +134,6 @@ export class AsyncStorageAdapter {
   }
 
   static load(name) {
-    return Promise.resolve(new AsyncStorageAdapter(name));
+    return Promise.resolve(new RealmStorageAdapter(name));
   }
 }
