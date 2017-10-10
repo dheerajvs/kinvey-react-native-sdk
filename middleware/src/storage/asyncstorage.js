@@ -5,7 +5,6 @@ import keyBy from 'lodash/keyBy';
 import merge from 'lodash/merge';
 import values from 'lodash/values';
 import forEach from 'lodash/forEach';
-import findIndex from 'lodash/findIndex';
 import find from 'lodash/find';
 
 const idAttribute = process.env.KINVEY_ID_ATTRIBUTE || '_id';
@@ -19,7 +18,9 @@ export class AsyncStorageAdapter {
   }
 
   async populateMasterCollection() {
-    const masterCollection = await AsyncStorage.getItem(this.masterCollectionName);
+    const masterCollection = await AsyncStorage.getItem(
+      this.masterCollectionName
+    );
 
     if (isDefined(masterCollection) === false) {
       await AsyncStorage.setItem(this.masterCollectionName, JSON.stringify([]));
@@ -66,7 +67,7 @@ export class AsyncStorageAdapter {
   save(collection, entities) {
     return AsyncStorageAdapter._find(this.masterCollectionName)
       .then(async collections => {
-        if (findIndex(collections, collection) === -1) {
+        if (collections.indexOf(collection) === -1) {
           collections.push(collection);
           await AsyncStorage.setItem(
             this.masterCollectionName,
@@ -87,6 +88,8 @@ export class AsyncStorageAdapter {
 
           if (isDefined(entity)) {
             entitiesById[id] = merge(existingEntity, entity);
+          } else {
+            entitiesById[id] = existingEntity;
           }
         });
 
@@ -99,7 +102,7 @@ export class AsyncStorageAdapter {
   }
 
   removeById(collection, id) {
-    return this.find(collection).then(entities => {
+    return this.find(collection).then(async entities => {
       const entitiesById = keyBy(entities, idAttribute);
       const entity = entitiesById[id];
 
@@ -111,9 +114,13 @@ export class AsyncStorageAdapter {
       }
 
       delete entitiesById[id];
-      return this.save(collection, values(entitiesById)).then(() => ({
-        count: 1
-      }));
+
+      await AsyncStorage.setItem(
+        `${this.name}${collection}`,
+        JSON.stringify(values(entitiesById))
+      );
+
+      return { count: 1 };
     });
   }
 

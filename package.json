@@ -5,6 +5,18 @@
   "main": "index.js",
   "author": "Chris Miller",
   "license": "MIT",
+  "scripts": {
+    "lint": "eslint middleware/**/**/*.js popup.js index.js",
+    "prettier": "prettier --write --single-quote middleware/**/**/*.js",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.js": [
+      "yarn lint",
+      "yarn prettier",
+      "git add"
+    ]
+  },
   "dependencies": {
     "es6-promise": "^4.1.1",
     "kinvey-js-sdk": "^3.8.1",
@@ -13,5 +25,13 @@
   },
   "peerDependencies": {
     "react-native": "*"
+  },
+  "devDependencies": {
+    "@dialexa/eslint-config-dialexa": "^4.1.1",
+    "babel-eslint": "^8.0.1",
+    "eslint": "^4.8.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^4.0.4",
+    "prettier": "^1.6.1"
   }
 }

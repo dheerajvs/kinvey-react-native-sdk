@@ -1,0 +1,6 @@
+{
+  "extends": "@dialexa/eslint-config-dialexa/es6",
+  "rules": {
+    "arrow-parens": [1, "as-needed"]
+  }
+}
