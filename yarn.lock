@@ -957,7 +957,7 @@ jsonify@~0.0.0:
   version "0.0.0"
   resolved "https://registry.yarnpkg.com/jsonify/-/jsonify-0.0.0.tgz#2c74b6ee41d93ca51b7b5aaee8f503631d252a73"
 
-kinvey-js-sdk@^3.9.2:
+kinvey-js-sdk@^3.9.0:
   version "3.9.2"
   resolved "https://registry.yarnpkg.com/kinvey-js-sdk/-/kinvey-js-sdk-3.9.2.tgz#9a9280c8cbfd2bbd0c184d30c2dbddf89628c0bd"
   dependencies:
