@@ -34,6 +34,7 @@ function getPlugins(env = {}) {
           delete packagejson.private;
           delete packagejson.devDependencies;
           delete packagejson.scripts;
+          delete packagejson['lint-staged'];
           return new Buffer(JSON.stringify(packagejson, null, 2));
         }
       },
@@ -86,7 +87,11 @@ module.exports = (env = {}) => {
       library: 'Kinvey'
     },
     externals: {
-      'react-native': 'react-native'
+      'es6-promise': 'es6-promise',
+      'kinvey-js-sdk': 'kinvey-js-sdk',
+      lodash: 'lodash',
+      'react-native': 'react-native',
+      xhr: 'xhr'
     },
     resolve: {
       extensions: ['.js', '.json']
