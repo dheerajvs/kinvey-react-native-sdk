@@ -1,4 +1,4 @@
-import { CacheMiddleware } from 'kinvey-js-sdk/dist/export';
+import { CacheMiddleware } from 'kinvey-js-sdk';
 import Storage from './storage';
 
 /* eslint class-methods-use-this:0 */

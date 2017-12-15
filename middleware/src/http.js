@@ -3,7 +3,7 @@ import {
   NetworkConnectionError,
   TimeoutError,
   isDefined
-} from 'kinvey-js-sdk/dist/export';
+} from 'kinvey-js-sdk';
 import { Platform } from 'react-native';
 import xhr from 'xhr'; // TODO: Replace with axios
 import Promise from 'es6-promise';

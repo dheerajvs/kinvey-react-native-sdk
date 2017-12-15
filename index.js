@@ -1,6 +1,5 @@
-import { CacheRack, NetworkRack } from 'kinvey-js-sdk/dist/export';
-import { MobileIdentityConnect } from 'kinvey-js-sdk/dist/identity';
-import Kinvey from 'kinvey-js-sdk';
+import { CacheRack, NetworkRack, MobileIdentityConnect } from 'kinvey-js-sdk';
+import * as Kinvey from 'kinvey-js-sdk';
 import { CacheMiddleware, HttpMiddleware } from './middleware';
 import Popup from './popup';
 

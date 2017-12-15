@@ -1,5 +1,5 @@
 import { AsyncStorage } from 'react-native';
-import { NotFoundError, isDefined } from 'kinvey-js-sdk/dist/export';
+import { NotFoundError, isDefined } from 'kinvey-js-sdk';
 import Promise from 'es6-promise';
 import keyBy from 'lodash/keyBy';
 import merge from 'lodash/merge';
