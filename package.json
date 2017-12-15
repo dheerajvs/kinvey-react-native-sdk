@@ -1,4 +1,5 @@
 {
+  "private": true,
   "name": "kinvey-react-native-sdk",
   "version": "1.0.0",
   "description": "React-native SDK for Kinvey",
