@@ -2,13 +2,14 @@
   "name": "kinvey-react-native-sdk",
   "version": "1.0.0",
   "description": "React-native SDK for Kinvey",
-  "main": "index.js",
+  "main": "kinvey-react-native-sdk.js",
   "author": "Chris Miller",
   "license": "MIT",
   "scripts": {
     "lint": "eslint middleware/**/**/*.js popup.js index.js",
     "prettier": "prettier --write --single-quote middleware/**/**/*.js",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "webpack": "webpack"
   },
   "lint-staged": {
     "*.js": [
@@ -28,10 +29,18 @@
   },
   "devDependencies": {
     "@dialexa/eslint-config-dialexa": "^4.1.1",
+    "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.1",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
+    "copy-webpack-plugin": "^4.3.0",
     "eslint": "^4.8.0",
     "husky": "^0.14.3",
+    "json-loader": "^0.5.7",
     "lint-staged": "^4.0.4",
-    "prettier": "^1.6.1"
+    "prettier": "^1.6.1",
+    "uglifyjs-webpack-plugin": "^1.1.4",
+    "webpack": "^3.10.0"
   }
 }
