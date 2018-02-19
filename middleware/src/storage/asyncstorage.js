@@ -1,5 +1,5 @@
 import { AsyncStorage } from 'react-native';
-import { NotFoundError, isDefined } from 'kinvey-js-sdk/dist/export';
+import { NotFoundError, isDefined } from 'kinvey-js-sdk';
 import Promise from 'es6-promise';
 import keyBy from 'lodash/keyBy';
 import merge from 'lodash/merge';
@@ -125,16 +125,16 @@ export class AsyncStorageAdapter {
   }
 
   clear() {
-    return AsyncStorageAdapter._find(
-      this.masterCollectionName
-    ).then(async collections => {
-      forEach(collections, async collection => {
-        await AsyncStorage.removeItem(`${this.name}${collection}`);
-      });
+    return AsyncStorageAdapter._find(this.masterCollectionName).then(
+      async collections => {
+        forEach(collections, async collection => {
+          await AsyncStorage.removeItem(`${this.name}${collection}`);
+        });
 
-      await AsyncStorage.removeItem(this.masterCollectionName);
-      return null;
-    });
+        await AsyncStorage.removeItem(this.masterCollectionName);
+        return null;
+      }
+    );
   }
 
   static load(name) {

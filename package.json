@@ -19,7 +19,8 @@
   },
   "dependencies": {
     "es6-promise": "^4.1.1",
-    "kinvey-js-sdk": "^3.8.1",
+    "events": "^1.1.1",
+    "kinvey-js-sdk": "^3.9.9",
     "lodash": "^4.17.4",
     "xhr": "^2.4.0"
   },
